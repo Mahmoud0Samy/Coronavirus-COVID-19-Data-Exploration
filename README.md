@@ -182,23 +182,23 @@ ORDER BY
 
 Visualizations generated after the data exploration process can be found in the `Visualizations/` directory.
 
-![DASHBOARD](Visualizations/Dashboard AIO.png)
+![DASHBOARD](Visualizations/Dashboard.png)
 
 Our initial visualization offers a global perspective, thanks to OWID's categorization of countries into four income classes: 'High Income Countries,' 'High Middle Income Countries,' 'Low Middle Income Countries,' and 'Low Income Countries.' The visualization highlights that 'High Middle Income Countries' exhibit the highest number of deaths compared to other countries. This trend could be attributed to the economic fragility of these nations. Despite having sufficient resources to attract tourists (an unfavorable condition at the onset of the COVID-19 pandemic), they may lack the financial means to establish a robust healthcare system capable of withstanding crises such as the one posed by COVID-19.
 
-![Viz1](/Visualizations/Death Per All Countries Income Class.png)
+![Viz1](/Visualizations/1.png)
 
 In the second visualization, we observe the increasing trend of total new cases and total new deaths in Egypt. This upward trajectory continues until a plateau is reached between late April and early May 2023, where the data stabilizes at a maximum of 516,023 total cases and 24,830 new deaths, representing a mortality rate of 4.81% among the infected individuals.
 
-![Viz2](/Visualizations/Total Cases vs Total Deaths In Egypt.png)
+![Viz2](/Visualizations/2.png)
 
 The third visualization depicts the weekly fluctuations in new cases and new deaths in Egypt. Although the numerical values differ significantly, the underlying pattern remains consistent. The visualization also includes a reference line indicating the commencement of vaccinations in Egypt around January 24, 2021, according to [Ahram Online](https://english.ahram.org.eg/NewsContent/1/64/404860/Egypt/Politics-/Egypts-coronavirus-vaccination-campaign-A-timeline.aspx#:~:text=a%20satellite%20channel.-,24%20January,-Ahmed%20Hemdan%20is). Unfortunately, the dataset lacks week-by-week vaccination records, displaying only two spikes: one on May 23, 2021, with 84,223 new vaccinations and another on May 15, 2022, with 78,722 new vaccinations, suggesting irregular updates.
 
-![Viz3](/Visualizations/New Cases to New Deaths.png)
+![Viz3](/Visualizations/3.png)
 
 The final visualization returns to the global scale, presenting a map of the Middle East and Europe. It compares the infection rates of each country relative to its population. San Marino, the mountainous microstate surrounded by north-central Italy, stands out with the highest infection rate relative to its population, reaching 75%.
 
-![Viz5](/Visualizations/Infection Rate to Population.png)
+![Viz5](/Visualizations/4.png)
 
 
 ## Contributing
