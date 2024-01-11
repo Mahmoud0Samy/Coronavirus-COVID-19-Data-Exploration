@@ -22,6 +22,8 @@ and visualize relevant data to gain insights into the impact of the coronavirus 
 
 The `Query.sql` file contains SQL queries that explore various aspects of COVID-19 data in and outside of Egypt.
 Feel free to run the file and modify it to suit your specific analysis requirements.
+Visualization will be in the same order.
+There are more queries in the `Query.sql` please take a look.
 
 Let's go through the most important of the SQL queries to understand their purpose:
 
@@ -30,7 +32,7 @@ Let's go through the most important of the SQL queries to understand their purpo
 ```sql
 SELECT
 	location,
-	MAX(new_cases) AS MAX_Deaths
+	MAX(CAST(total_deaths AS INT)) total
 FROM 
 	CovidDeaths2023
 WHERE
@@ -41,7 +43,7 @@ GROUP BY
 ```
 
 **Explanation:**
-- **Objective:** Find the maximum number of new cases (MAX_Deaths) for each specified income level category in countries where the continent information is missing.
+- **Objective:** Find the total number of deaths in each country class.
 - **Columns Selected:**
   - `location`: Country name or income level category.
   - `MAX_Deaths`: Maximum number of new cases in each category.
@@ -56,7 +58,7 @@ GROUP BY
 ```sql
 SELECT 
 	MAX(new_cases) AS Total_New_Cases,
-	MAX(new_cases) AS Total_New_Deaths,
+	MAX(new_deaths) AS Total_New_Deaths,
 	ROUND(MAX(CAST(new_deaths AS FLOAT))/MAX(CAST(new_cases AS FLOAT))*100, 2) AS Death_Percentage_of_Cases 
 FROM 
 	CovidDeaths2023
@@ -67,7 +69,7 @@ ORDER BY
 ```
 
 **Explanation:**
-- **Objective:** Calculate various statistics related to COVID-19 cases and deaths for Egypt.
+- **Objective:** Find highest number of newly reported cases and deaths in Egypt.
 - **Columns Selected:**
   - `Total_New_Cases`: Maximum number of new cases in Egypt.
   - `Total_New_Deaths`: Maximum number of new deaths in Egypt.
@@ -99,7 +101,7 @@ ORDER BY
 ```
 
 **Explanation:**
-- **Objective:** Retrieve data on new cases, new deaths, and new vaccinations for Egypt, joining data from two tables.
+- **Objective:** Retrieve data on new cases, new deaths, and new vaccinations for Egypt, joining data from two tables to see if the numbers would change after vaccinations.
 - **Columns Selected:**
   - `date`: Date of the data.
   - `new_cases`: Number of new COVID-19 cases.
@@ -165,7 +167,7 @@ ORDER BY
 ```
 
 **Explanation:**
-- **Objective:** Find the country with the highest infection count, along with related population statistics.
+- **Objective:** Find the country with the highest infection percentage of its population , along with related population statistics.
 - **Columns Selected:**
   - `location`: Country name.
   - `Highest_Infection_Count`: Maximum total number of COVID-19 cases in a country.
@@ -184,7 +186,14 @@ Visualizations generated after the data exploration process can be found in the 
 
 ![DASHBOARD](Visualizations/Dashboard.png)
 
-Our initial visualization offers a global perspective, thanks to OWID's categorization of countries into four income classes: 'High Income Countries,' 'High Middle Income Countries,' 'Low Middle Income Countries,' and 'Low Income Countries.' The visualization highlights that 'High Middle Income Countries' exhibit the highest number of deaths compared to other countries. This trend could be attributed to the economic fragility of these nations. Despite having sufficient resources to attract tourists (an unfavorable condition at the onset of the COVID-19 pandemic), they may lack the financial means to establish a robust healthcare system capable of withstanding crises such as the one posed by COVID-19.
+Our initial visualization offers a global perspective, thanks to OWID's categorization of countries into four income classes: 'High Income Countries', 'High Middle Income Countries', 'Low Middle Income Countries', and 'Low Income Countries'. The visualization highlights that 'High Income Countries' exhibit the highest number of deaths compared to other countries, Although lower-income countries exhibit a lower death rate, this may be attributed to reporting issues. Higher-income countries, on the other hand, employ more effective and comprehensive reporting methods to ensure accurate numbers. This enhances the reliability of the data, as demonstrated in the table below, where 'Lower Middle Income Countries' show the highest population yet the second-lowest number of cases and deaths, raising suspicions about the accuracy of these figures.
+
+| location | pop | cases | death |
+| -------- | --- | ----- | ----- |
+| Low income | 737,604,900 | 2,324,647 | 48,031 |
+| Lower middle income | 3,432,097,300 | 97,474,658 | 1,340,924 |
+| Upper middle income | 2,525,921,300 | 244,971,563 |	2,665,623 |
+| High income | 1,250,514,600 | 427,465,647 | 2,933,299 |
 
 ![Viz1](/Visualizations/1.png)
 
