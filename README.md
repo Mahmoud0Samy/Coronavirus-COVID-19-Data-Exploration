@@ -23,7 +23,7 @@ and visualize relevant data to gain insights into the impact of the coronavirus 
 The `Query.sql` file contains SQL queries that explore various aspects of COVID-19 data in and outside of Egypt.
 Feel free to run the file and modify it to suit your specific analysis requirements.
 
-Certainly! Let's go through each of the SQL queries to understand their purpose:
+Let's go through the most important of the SQL queries to understand their purpose:
 
 ### Query 1:
 
