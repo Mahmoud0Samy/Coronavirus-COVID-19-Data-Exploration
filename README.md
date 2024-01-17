@@ -187,6 +187,7 @@ Visualizations generated after the data exploration process can be found in the 
 ![DASHBOARD](Visualizations/Dashboard.png)
 
 Our initial visualization offers a global perspective, thanks to OWID's categorization of countries into four income classes: 'High Income Countries', 'High Middle Income Countries', 'Low Middle Income Countries', and 'Low Income Countries'. The visualization highlights that 'High Income Countries' exhibit the highest number of deaths compared to other countries, Although lower-income countries exhibit a lower death rate, this may be attributed to reporting issues. Higher-income countries, on the other hand, employ more effective and comprehensive reporting methods to ensure accurate numbers. This enhances the reliability of the data, as demonstrated in the table below, where 'Lower Middle Income Countries' show the highest population yet the second-lowest number of cases and deaths, raising suspicions about the accuracy of these figures.
+If you are intersted to know which country is in which class you can visit this visualization here made by [Our World In Data (OWID)](https://ourworldindata.org/grapher/world-banks-income-groups)
 
 | location | pop | cases | death |
 | -------- | --- | ----- | ----- |
